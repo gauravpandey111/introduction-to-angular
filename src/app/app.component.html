@@ -1,6 +1,19 @@
 <main>
   <header><img src="../assets/logo.svg">Fairhouse</header>
   <section>
+    <app-monster-list [monsterLocationListVariable]="monsterLocationGlobalListFromApp" (selectedMonsterLocationEvent)="updateSelectedMonsterLocation($event)"></app-monster-list>
+    <article>
+      <ng-container *ngIf="selectedMonsterLocation">
+        <img [src]="selectedMonsterLocation?.photo">
+        <p>{{selectedMonsterLocation?.name}}</p>
+        <p>{{selectedMonsterLocation?.city}}, {{selectedMonsterLocation?.state}}</p>
+        <p>Available Units: {{selectedMonsterLocation?.availableUnits}}</p>
+        <p>{{selectedMonsterLocation?.laundry ? "Has laundry" : "Does Not have laundry"}}</p>
+        <p>{{selectedMonsterLocation?.wifi ? "Has wifi" : "Does Not have wifi"}}</p>
+      </ng-container>
+    </article>
+  </section>
+  <section>
     <app-housing-list [locationList]="housingLocationList" (locationSelectedEvent)="updateSelectedLocation($event)">
     </app-housing-list>
     <article>

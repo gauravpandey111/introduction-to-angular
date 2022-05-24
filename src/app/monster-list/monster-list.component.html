@@ -1,0 +1,7 @@
+<label for="monster-location-search">Search for a monster</label>
+<input id="monster-location-search" placeholder="Ex: Red Monster" #templateVariable><button (click)="searchMonsterLocations(templateVariable.value)">Search</button>
+<article *ngFor="let monsterLocation of monsterLocationsFilteredResults">
+    <p>{{ monsterLocation.name }}</p>
+    <p>{{ monsterLocation.city }}</p>
+    <button (click)="selectedMonsterLocationFunction(monsterLocation)">View</button>
+</article>

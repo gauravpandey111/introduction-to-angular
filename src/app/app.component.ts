@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { HousingLocation } from './housing-location';
+import {Component} from '@angular/core';
+import {HousingLocation} from './housing-location';
+import {MonsterLocation} from "./monster-location";
 
 @Component({
   selector: 'app-root',
@@ -43,5 +44,29 @@ export class AppComponent {
 
   updateSelectedLocation(location: HousingLocation) {
     this.selectedLocation = location;
+  }
+
+  monsterLocationGlobalListFromApp: MonsterLocation[] = [
+    {
+      name: "Green Monster",
+      city: "Greenwood"
+    },
+    {
+      name: "Red Monster",
+      city: "Redwood"
+    },
+    {
+      name: "Blue Monster",
+      city: "Blue Sea"
+    },
+    {
+      name: "Yellow Monster",
+      city: "Yellowstone"
+    }
+  ];
+
+  selectedMonsterLocation: MonsterLocation | undefined;
+  updateSelectedMonsterLocation(monsterLocation: MonsterLocation) {
+    this.selectedMonsterLocation = monsterLocation;
   }
 }
