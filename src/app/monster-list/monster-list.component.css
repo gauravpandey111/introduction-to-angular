@@ -16,10 +16,10 @@ input {
 button {
     width: 70px;
     height: 42px;
-    background-color: #4468e8;
-    color: white;
-    border: solid 1px #4468e8;
-    border-radius: 0 2px 2px 0;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border: var(--button-border-color);
+    border-radius: var(--button-border-radius);
 }
 
 article {
